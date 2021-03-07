@@ -1,0 +1,87 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: update_status_path
+  steps:
+  - intent: add_status
+  - action: status_form
+  - active_loop: status_form
+  - slot_was_set:
+    - requested_slot: emp_id
+  - slot_was_set:
+    - emp_id: '4455555'
+  - slot_was_set:
+    - emp_id: '4455555'
+  - slot_was_set:
+    - requested_slot: course_name
+  - slot_was_set:
+    - course_name: innards
+  - slot_was_set:
+    - course_name: innards
+  - slot_was_set:
+    - requested_slot: status
+  - slot_was_set:
+    - status: finished
+  - slot_was_set:
+    - status: finished
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - intent: affirm
+  - action: utter_submit
+
+- story: check_status_path
+  steps:
+  - action: utter_greet
+  - intent: check_status
+  - action: get_status
+  - active_loop: get_status
+  - slot_was_set:
+    - requested_slot: emp_id
+  - slot_was_set:
+    - emp_id: '1245525'
+  - slot_was_set:
+    - emp_id: '1245525'
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null

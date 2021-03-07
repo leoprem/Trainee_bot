@@ -1,0 +1,85 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- goodbye
+- greet
+- course_entry
+- status_entry
+- affirm
+- add_status
+- id_entry
+- mood_unhappy
+- deny
+- mood_great
+- bot_challenge
+- check_status
+- thank_you
+entities:
+- emp_id
+- course_name
+- status
+- c_status
+slots:
+  emp_id:
+    type: text
+    influence_conversation: true
+  course_name:
+    type: text
+    influence_conversation: true
+  status:
+    type: text
+    influence_conversation: true
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hi, I'm the Trainee helper bot, how may I help you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_emp_id:
+  - text: What is your employee ID?
+  utter_ask_course_name:
+  - text: Which course are you doing?
+  utter_ask_status:
+  - text: What is your status on that course?
+    buttons:
+    - payload: Started
+      title: Started
+    - payload: In progress
+      title: In progress
+    - payload: Completed
+      title: Completed
+  utter_slot_values:
+  - text: So the course {course_name} is having the status {status}, corrrect?
+  utter_submit:
+  - text: Ok done!
+  utter_thanks:
+  - text: You're welcome!
+actions:
+- status_form
+- utter_ask_course_name
+- utter_ask_emp_id
+- utter_ask_status
+- utter_cheer_up
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_slot_values
+- utter_submit
+- utter_thanks
+- get_status
+forms:
+  status_form: null
+  get_status: null

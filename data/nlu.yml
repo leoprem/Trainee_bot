@@ -1,0 +1,155 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - good bye
+    - thank you
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - I'm sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: add_status
+  examples: |
+    - Hi I would like to update my status for [1837855](emp_id)
+    - I need to update status
+    - Update courses
+    - update status
+    - update status [125466](emp_id)
+    - Add status for [1254688](emp_id)
+    - My id is [2546822](emp_id) update my status
+    - add courses
+    - update status for id [123654](emp_id)
+    - update my course
+    - I need to update courses for [1837855](emp_id)
+    - update courses for [1254558](emp_id)
+
+- intent: id_entry
+  examples: |
+    - Add courses for [1837855](emp_id)
+    - My id is [1254685](emp_id)
+    - Update status for [1837555](emp_id)
+    - [12548752](emp_id) update status
+    - Employee id [1254698](emp_id)
+    - add course for [1835525](emp_id)
+    - id is [1254683](emp_id)
+    - [12545668](emp_id) course update
+- intent: course_entry
+  examples: |
+    - I [finished] (status) my course [fresco](course_name)
+    - course is [udemy course](course_name)
+    - I'm doing [selenium python](course_name)
+    - the [java innarads](course_name) course
+    - [Udemy](course_name)
+    - I'm doing [java innards](course_name)
+    - [java](course_name) course
+    - i'm doing [Devops for beginners](course_name)
+    - [Elegant Selenium automation](course_name)
+    - [Elegant Automation](course_name) course
+- intent: status_entry
+  examples: |
+    - I [completed](status) my course
+    - It's [completed](status)
+    - I [started](status) it
+    - It is [in progress](status)
+    - It is [not finished](status)
+    - I [finished](status) it
+    - It's [over](status)
+    - [finished](status) it
+    - I'm is [over](status)
+    - it's [over](status)
+    - [over](status)
+    - [done](status)
+    - It's [done](status)
+- intent: thank_you
+  examples: |
+    - yes thankS
+    - Thank you
+    - That was helpful
+- intent: check_status
+  examples: |
+    - Status
+    - Status for [1254563](emp_id)
+    - Please check my course status
+    - What's my course status
+    - Course status for [8755875](emp_id)
+    - Check status of [325698](emp_id)
+  
